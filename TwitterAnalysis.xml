@@ -1,0 +1,3379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>d0c8adff-a6a9-3101-da2b-2cb721458ecf</groupId>
+    <name>TwitterAnalysis</name>
+    <snippet>
+        <controllerServices>
+            <id>b62e696d-53c8-3438-0000-000000000000</id>
+            <parentGroupId>b519fcd6-b8df-3009-0000-000000000000</parentGroupId>
+            <bundle>
+                <artifact>nifi-registry-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.7.0</version>
+            </bundle>
+            <comments></comments>
+            <descriptors>
+                <entry>
+                    <key>avro-reg-validated-field-names</key>
+                    <value>
+                        <name>avro-reg-validated-field-names</name>
+                    </value>
+                </entry>
+                <entry>
+                    <key>users</key>
+                    <value>
+                        <name>users</name>
+                    </value>
+                </entry>
+            </descriptors>
+            <name>AvroSchemaRegistry</name>
+            <persistsState>false</persistsState>
+            <properties>
+                <entry>
+                    <key>avro-reg-validated-field-names</key>
+                    <value>true</value>
+                </entry>
+                <entry>
+                    <key>users</key>
+                    <value>{
+  "type": "record",
+  "name": "UserRecord",
+  "fields" : [
+    {"name": "id", "type": "long"},
+    {"name": "title", "type": ["null", "string"]},
+    {"name": "first", "type": ["null", "string"]},
+    {"name": "last", "type": ["null", "string"]},
+    {"name": "street", "type": ["null", "string"]},
+    {"name": "city", "type": ["null", "string"]},
+    {"name": "state", "type": ["null", "string"]},
+    {"name": "zip", "type": ["null", "string"]},
+    {"name": "gender", "type": ["null", "string"]},
+    {"name": "email", "type": ["null", "string"]},
+    {"name": "username", "type": ["null", "string"]},
+    {"name": "password", "type": ["null", "string"]},
+    {"name": "phone", "type": ["null", "string"]},
+    {"name": "cell", "type": ["null", "string"]},
+    {"name": "ssn", "type": ["null", "string"]},
+    {"name": "date_of_birth", "type": ["null", "string"]},
+    {"name": "reg_date", "type": ["null", "string"]},
+    {"name": "large", "type": ["null", "string"]},
+    {"name": "medium", "type": ["null", "string"]},
+    {"name": "thumbnail", "type": ["null", "string"]},
+    {"name": "version", "type": ["null", "string"]},
+    {"name": "nationality", "type": ["null", "string"]}
+  ]
+}</value>
+                </entry>
+            </properties>
+            <state>DISABLED</state>
+            <type>org.apache.nifi.schemaregistry.services.AvroSchemaRegistry</type>
+        </controllerServices>
+        <processGroups>
+            <id>5acb372e-257f-31f2-0000-000000000000</id>
+            <parentGroupId>b519fcd6-b8df-3009-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <comments></comments>
+            <contents>
+                <connections>
+                    <id>3d7be446-23c0-3afd-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>5acb372e-257f-31f2-0000-000000000000</groupId>
+                        <id>dabf496d-f45a-3d7f-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <source>
+                        <groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+                        <id>c0613dad-f106-3ea4-0000-000000000000</id>
+                        <type>OUTPUT_PORT</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>84d7591d-2297-3c81-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>5acb372e-257f-31f2-0000-000000000000</groupId>
+                        <id>4c115b0c-4806-3205-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>5acb372e-257f-31f2-0000-000000000000</groupId>
+                        <id>dabf496d-f45a-3d7f-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>cc4d4a50-3277-3074-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>5acb372e-257f-31f2-0000-000000000000</groupId>
+                        <id>86ac5d6d-3414-38a3-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>matched</selectedRelationships>
+                    <source>
+                        <groupId>5acb372e-257f-31f2-0000-000000000000</groupId>
+                        <id>4c115b0c-4806-3205-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <controllerServices>
+                    <id>403cc257-1b06-33ec-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <bundle>
+                        <artifact>nifi-record-serialization-services-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <comments></comments>
+                    <descriptors>
+                        <entry>
+                            <key>schema-access-strategy</key>
+                            <value>
+<name>schema-access-strategy</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-registry</key>
+                            <value>
+<identifiesControllerService>org.apache.nifi.schemaregistry.services.SchemaRegistry</identifiesControllerService>
+<name>schema-registry</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-name</key>
+                            <value>
+<name>schema-name</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-version</key>
+                            <value>
+<name>schema-version</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-branch</key>
+                            <value>
+<name>schema-branch</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-text</key>
+                            <value>
+<name>schema-text</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Date Format</key>
+                            <value>
+<name>Date Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Time Format</key>
+                            <value>
+<name>Time Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Timestamp Format</key>
+                            <value>
+<name>Timestamp Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>myschema</key>
+                            <value>
+<name>myschema</name>
+                            </value>
+                        </entry>
+                    </descriptors>
+                    <name>JsonTreeReaderAjil</name>
+                    <persistsState>false</persistsState>
+                    <properties>
+                        <entry>
+                            <key>schema-access-strategy</key>
+                            <value>schema-name</value>
+                        </entry>
+                        <entry>
+                            <key>schema-registry</key>
+                            <value>b62e696d-53c8-3438-0000-000000000000</value>
+                        </entry>
+                        <entry>
+                            <key>schema-name</key>
+                            <value>${schema.name}</value>
+                        </entry>
+                        <entry>
+                            <key>schema-version</key>
+                        </entry>
+                        <entry>
+                            <key>schema-branch</key>
+                        </entry>
+                        <entry>
+                            <key>schema-text</key>
+                            <value>${avro.schema}</value>
+                        </entry>
+                        <entry>
+                            <key>Date Format</key>
+                        </entry>
+                        <entry>
+                            <key>Time Format</key>
+                        </entry>
+                        <entry>
+                            <key>Timestamp Format</key>
+                        </entry>
+                        <entry>
+                            <key>myschema</key>
+                            <value>{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "created_at": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "id_str": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "truncated": {
+      "type": "boolean"
+    },
+    "in_reply_to_status_id": {
+      "type": "null"
+    },
+    "in_reply_to_status_id_str": {
+      "type": "null"
+    },
+    "in_reply_to_user_id": {
+      "type": "null"
+    },
+    "in_reply_to_user_id_str": {
+      "type": "null"
+    },
+    "in_reply_to_screen_name": {
+      "type": "null"
+    },
+    "user": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "id_str": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "screen_name": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "translator_type": {
+          "type": "string"
+        },
+        "protected": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "followers_count": {
+          "type": "integer"
+        },
+        "friends_count": {
+          "type": "integer"
+        },
+        "listed_count": {
+          "type": "integer"
+        },
+        "favourites_count": {
+          "type": "integer"
+        },
+        "statuses_count": {
+          "type": "integer"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "utc_offset": {
+          "type": "null"
+        },
+        "time_zone": {
+          "type": "null"
+        },
+        "geo_enabled": {
+          "type": "boolean"
+        },
+        "lang": {
+          "type": "string"
+        },
+        "contributors_enabled": {
+          "type": "boolean"
+        },
+        "is_translator": {
+          "type": "boolean"
+        },
+        "profile_background_color": {
+          "type": "string"
+        },
+        "profile_background_image_url": {
+          "type": "string"
+        },
+        "profile_background_image_url_https": {
+          "type": "string"
+        },
+        "profile_background_tile": {
+          "type": "boolean"
+        },
+        "profile_link_color": {
+          "type": "string"
+        },
+        "profile_sidebar_border_color": {
+          "type": "string"
+        },
+        "profile_sidebar_fill_color": {
+          "type": "string"
+        },
+        "profile_text_color": {
+          "type": "string"
+        },
+        "profile_use_background_image": {
+          "type": "boolean"
+        },
+        "profile_image_url": {
+          "type": "string"
+        },
+        "profile_image_url_https": {
+          "type": "string"
+        },
+        "profile_banner_url": {
+          "type": "string"
+        },
+        "default_profile": {
+          "type": "boolean"
+        },
+        "default_profile_image": {
+          "type": "boolean"
+        },
+        "following": {
+          "type": "null"
+        },
+        "follow_request_sent": {
+          "type": "null"
+        },
+        "notifications": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "id",
+        "id_str",
+        "name",
+        "screen_name",
+        "location",
+        "url",
+        "description",
+        "translator_type",
+        "protected",
+        "verified",
+        "followers_count",
+        "friends_count",
+        "listed_count",
+        "favourites_count",
+        "statuses_count",
+        "created_at",
+        "utc_offset",
+        "time_zone",
+        "geo_enabled",
+        "lang",
+        "contributors_enabled",
+        "is_translator",
+        "profile_background_color",
+        "profile_background_image_url",
+        "profile_background_image_url_https",
+        "profile_background_tile",
+        "profile_link_color",
+        "profile_sidebar_border_color",
+        "profile_sidebar_fill_color",
+        "profile_text_color",
+        "profile_use_background_image",
+        "profile_image_url",
+        "profile_image_url_https",
+        "profile_banner_url",
+        "default_profile",
+        "default_profile_image",
+        "following",
+        "follow_request_sent",
+        "notifications"
+      ]
+    },
+    "geo": {
+      "type": "null"
+    },
+    "coordinates": {
+      "type": "null"
+    },
+    "place": {
+      "type": "null"
+    },
+    "contributors": {
+      "type": "null"
+    },
+    "retweeted_status": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "id_str": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "display_text_range": {
+          "type": "array",
+          "items": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "source": {
+          "type": "string"
+        },
+        "truncated": {
+          "type": "boolean"
+        },
+        "in_reply_to_status_id": {
+          "type": "null"
+        },
+        "in_reply_to_status_id_str": {
+          "type": "null"
+        },
+        "in_reply_to_user_id": {
+          "type": "null"
+        },
+        "in_reply_to_user_id_str": {
+          "type": "null"
+        },
+        "in_reply_to_screen_name": {
+          "type": "null"
+        },
+        "user": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "id_str": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "screen_name": {
+              "type": "string"
+            },
+            "location": {
+              "type": "string"
+            },
+            "url": {
+              "type": "null"
+            },
+            "description": {
+              "type": "string"
+            },
+            "translator_type": {
+              "type": "string"
+            },
+            "protected": {
+              "type": "boolean"
+            },
+            "verified": {
+              "type": "boolean"
+            },
+            "followers_count": {
+              "type": "integer"
+            },
+            "friends_count": {
+              "type": "integer"
+            },
+            "listed_count": {
+              "type": "integer"
+            },
+            "favourites_count": {
+              "type": "integer"
+            },
+            "statuses_count": {
+              "type": "integer"
+            },
+            "created_at": {
+              "type": "string"
+            },
+            "utc_offset": {
+              "type": "null"
+            },
+            "time_zone": {
+              "type": "null"
+            },
+            "geo_enabled": {
+              "type": "boolean"
+            },
+            "lang": {
+              "type": "string"
+            },
+            "contributors_enabled": {
+              "type": "boolean"
+            },
+            "is_translator": {
+              "type": "boolean"
+            },
+            "profile_background_color": {
+              "type": "string"
+            },
+            "profile_background_image_url": {
+              "type": "string"
+            },
+            "profile_background_image_url_https": {
+              "type": "string"
+            },
+            "profile_background_tile": {
+              "type": "boolean"
+            },
+            "profile_link_color": {
+              "type": "string"
+            },
+            "profile_sidebar_border_color": {
+              "type": "string"
+            },
+            "profile_sidebar_fill_color": {
+              "type": "string"
+            },
+            "profile_text_color": {
+              "type": "string"
+            },
+            "profile_use_background_image": {
+              "type": "boolean"
+            },
+            "profile_image_url": {
+              "type": "string"
+            },
+            "profile_image_url_https": {
+              "type": "string"
+            },
+            "profile_banner_url": {
+              "type": "string"
+            },
+            "default_profile": {
+              "type": "boolean"
+            },
+            "default_profile_image": {
+              "type": "boolean"
+            },
+            "following": {
+              "type": "null"
+            },
+            "follow_request_sent": {
+              "type": "null"
+            },
+            "notifications": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "id_str",
+            "name",
+            "screen_name",
+            "location",
+            "url",
+            "description",
+            "translator_type",
+            "protected",
+            "verified",
+            "followers_count",
+            "friends_count",
+            "listed_count",
+            "favourites_count",
+            "statuses_count",
+            "created_at",
+            "utc_offset",
+            "time_zone",
+            "geo_enabled",
+            "lang",
+            "contributors_enabled",
+            "is_translator",
+            "profile_background_color",
+            "profile_background_image_url",
+            "profile_background_image_url_https",
+            "profile_background_tile",
+            "profile_link_color",
+            "profile_sidebar_border_color",
+            "profile_sidebar_fill_color",
+            "profile_text_color",
+            "profile_use_background_image",
+            "profile_image_url",
+            "profile_image_url_https",
+            "profile_banner_url",
+            "default_profile",
+            "default_profile_image",
+            "following",
+            "follow_request_sent",
+            "notifications"
+          ]
+        },
+        "geo": {
+          "type": "null"
+        },
+        "coordinates": {
+          "type": "null"
+        },
+        "place": {
+          "type": "null"
+        },
+        "contributors": {
+          "type": "null"
+        },
+        "is_quote_status": {
+          "type": "boolean"
+        },
+        "extended_tweet": {
+          "type": "object",
+          "properties": {
+            "full_text": {
+              "type": "string"
+            },
+            "display_text_range": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "entities": {
+              "type": "object",
+              "properties": {
+                "hashtags": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "indices"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "indices"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "text": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "text",
+                        "indices"
+                      ]
+                    }
+                  ]
+                },
+                "urls": {
+                  "type": "array",
+                  "items": {}
+                },
+                "user_mentions": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "screen_name": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "screen_name",
+                        "name",
+                        "id",
+                        "id_str",
+                        "indices"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "screen_name": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "screen_name",
+                        "name",
+                        "id",
+                        "id_str",
+                        "indices"
+                      ]
+                    }
+                  ]
+                },
+                "symbols": {
+                  "type": "array",
+                  "items": {}
+                },
+                "media": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "sizes": {
+                          "type": "object",
+                          "properties": {
+                            "large": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "thumb": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "small": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "medium": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "thumb",
+                            "small",
+                            "medium"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "url",
+                        "display_url",
+                        "expanded_url",
+                        "type",
+                        "sizes"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "sizes": {
+                          "type": "object",
+                          "properties": {
+                            "large": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "thumb": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "medium": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "small": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "thumb",
+                            "medium",
+                            "small"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "url",
+                        "display_url",
+                        "expanded_url",
+                        "type",
+                        "sizes"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "sizes": {
+                          "type": "object",
+                          "properties": {
+                            "thumb": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "small": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "large": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "medium": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "thumb",
+                            "small",
+                            "large",
+                            "medium"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "url",
+                        "display_url",
+                        "expanded_url",
+                        "type",
+                        "sizes"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "hashtags",
+                "urls",
+                "user_mentions",
+                "symbols",
+                "media"
+              ]
+            },
+            "extended_entities": {
+              "type": "object",
+              "properties": {
+                "media": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "sizes": {
+                          "type": "object",
+                          "properties": {
+                            "large": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "thumb": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "small": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "medium": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "thumb",
+                            "small",
+                            "medium"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "url",
+                        "display_url",
+                        "expanded_url",
+                        "type",
+                        "sizes"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "sizes": {
+                          "type": "object",
+                          "properties": {
+                            "large": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "thumb": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "medium": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "small": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "large",
+                            "thumb",
+                            "medium",
+                            "small"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "url",
+                        "display_url",
+                        "expanded_url",
+                        "type",
+                        "sizes"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "id_str": {
+                          "type": "string"
+                        },
+                        "indices": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "integer"
+                            },
+                            {
+                              "type": "integer"
+                            }
+                          ]
+                        },
+                        "media_url": {
+                          "type": "string"
+                        },
+                        "media_url_https": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "display_url": {
+                          "type": "string"
+                        },
+                        "expanded_url": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "sizes": {
+                          "type": "object",
+                          "properties": {
+                            "thumb": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "small": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "large": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            },
+                            "medium": {
+                              "type": "object",
+                              "properties": {
+                                "w": {
+                                  "type": "integer"
+                                },
+                                "h": {
+                                  "type": "integer"
+                                },
+                                "resize": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "w",
+                                "h",
+                                "resize"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "thumb",
+                            "small",
+                            "large",
+                            "medium"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "id_str",
+                        "indices",
+                        "media_url",
+                        "media_url_https",
+                        "url",
+                        "display_url",
+                        "expanded_url",
+                        "type",
+                        "sizes"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "media"
+              ]
+            }
+          },
+          "required": [
+            "full_text",
+            "display_text_range",
+            "entities",
+            "extended_entities"
+          ]
+        },
+        "quote_count": {
+          "type": "integer"
+        },
+        "reply_count": {
+          "type": "integer"
+        },
+        "retweet_count": {
+          "type": "integer"
+        },
+        "favorite_count": {
+          "type": "integer"
+        },
+        "entities": {
+          "type": "object",
+          "properties": {
+            "hashtags": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "integer"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "indices"
+                  ]
+                }
+              ]
+            },
+            "urls": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    },
+                    "expanded_url": {
+                      "type": "string"
+                    },
+                    "display_url": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "integer"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "url",
+                    "expanded_url",
+                    "display_url",
+                    "indices"
+                  ]
+                }
+              ]
+            },
+            "user_mentions": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "screen_name": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "id_str": {
+                      "type": "string"
+                    },
+                    "indices": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "integer"
+                        },
+                        {
+                          "type": "integer"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "screen_name",
+                    "name",
+                    "id",
+                    "id_str",
+                    "indices"
+                  ]
+                }
+              ]
+            },
+            "symbols": {
+              "type": "array",
+              "items": {}
+            }
+          },
+          "required": [
+            "hashtags",
+            "urls",
+            "user_mentions",
+            "symbols"
+          ]
+        },
+        "favorited": {
+          "type": "boolean"
+        },
+        "retweeted": {
+          "type": "boolean"
+        },
+        "possibly_sensitive": {
+          "type": "boolean"
+        },
+        "filter_level": {
+          "type": "string"
+        },
+        "lang": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "created_at",
+        "id",
+        "id_str",
+        "text",
+        "display_text_range",
+        "source",
+        "truncated",
+        "in_reply_to_status_id",
+        "in_reply_to_status_id_str",
+        "in_reply_to_user_id",
+        "in_reply_to_user_id_str",
+        "in_reply_to_screen_name",
+        "user",
+        "geo",
+        "coordinates",
+        "place",
+        "contributors",
+        "is_quote_status",
+        "extended_tweet",
+        "quote_count",
+        "reply_count",
+        "retweet_count",
+        "favorite_count",
+        "entities",
+        "favorited",
+        "retweeted",
+        "possibly_sensitive",
+        "filter_level",
+        "lang"
+      ]
+    },
+    "is_quote_status": {
+      "type": "boolean"
+    },
+    "quote_count": {
+      "type": "integer"
+    },
+    "reply_count": {
+      "type": "integer"
+    },
+    "retweet_count": {
+      "type": "integer"
+    },
+    "favorite_count": {
+      "type": "integer"
+    },
+    "entities": {
+      "type": "object",
+      "properties": {
+        "hashtags": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "text",
+                "indices"
+              ]
+            }
+          ]
+        },
+        "urls": {
+          "type": "array",
+          "items": {}
+        },
+        "user_mentions": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "screen_name": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "id_str": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "screen_name",
+                "name",
+                "id",
+                "id_str",
+                "indices"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "screen_name": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "id_str": {
+                  "type": "string"
+                },
+                "indices": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "screen_name",
+                "name",
+                "id",
+                "id_str",
+                "indices"
+              ]
+            }
+          ]
+        },
+        "symbols": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "hashtags",
+        "urls",
+        "user_mentions",
+        "symbols"
+      ]
+    },
+    "favorited": {
+      "type": "boolean"
+    },
+    "retweeted": {
+      "type": "boolean"
+    },
+    "filter_level": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "timestamp_ms": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "created_at",
+    "id",
+    "id_str",
+    "text",
+    "source",
+    "truncated",
+    "in_reply_to_status_id",
+    "in_reply_to_status_id_str",
+    "in_reply_to_user_id",
+    "in_reply_to_user_id_str",
+    "in_reply_to_screen_name",
+    "user",
+    "geo",
+    "coordinates",
+    "place",
+    "contributors",
+    "retweeted_status",
+    "is_quote_status",
+    "quote_count",
+    "reply_count",
+    "retweet_count",
+    "favorite_count",
+    "entities",
+    "favorited",
+    "retweeted",
+    "filter_level",
+    "lang",
+    "timestamp_ms"
+  ]
+}</value>
+                        </entry>
+                    </properties>
+                    <state>DISABLED</state>
+                    <type>org.apache.nifi.json.JsonTreeReader</type>
+                </controllerServices>
+                <controllerServices>
+                    <id>eff7ffc5-e34a-3312-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <bundle>
+                        <artifact>nifi-record-serialization-services-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <comments></comments>
+                    <descriptors>
+                        <entry>
+                            <key>Schema Write Strategy</key>
+                            <value>
+<name>Schema Write Strategy</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-access-strategy</key>
+                            <value>
+<name>schema-access-strategy</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-registry</key>
+                            <value>
+<identifiesControllerService>org.apache.nifi.schemaregistry.services.SchemaRegistry</identifiesControllerService>
+<name>schema-registry</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-name</key>
+                            <value>
+<name>schema-name</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-version</key>
+                            <value>
+<name>schema-version</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-branch</key>
+                            <value>
+<name>schema-branch</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-text</key>
+                            <value>
+<name>schema-text</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Date Format</key>
+                            <value>
+<name>Date Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Time Format</key>
+                            <value>
+<name>Time Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Timestamp Format</key>
+                            <value>
+<name>Timestamp Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>CSV Format</key>
+                            <value>
+<name>CSV Format</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Value Separator</key>
+                            <value>
+<name>Value Separator</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Include Header Line</key>
+                            <value>
+<name>Include Header Line</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Quote Character</key>
+                            <value>
+<name>Quote Character</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Escape Character</key>
+                            <value>
+<name>Escape Character</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Comment Marker</key>
+                            <value>
+<name>Comment Marker</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Null String</key>
+                            <value>
+<name>Null String</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Trim Fields</key>
+                            <value>
+<name>Trim Fields</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Quote Mode</key>
+                            <value>
+<name>Quote Mode</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Record Separator</key>
+                            <value>
+<name>Record Separator</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Include Trailing Delimiter</key>
+                            <value>
+<name>Include Trailing Delimiter</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>csvutils-character-set</key>
+                            <value>
+<name>csvutils-character-set</name>
+                            </value>
+                        </entry>
+                    </descriptors>
+                    <name>CSVRecordSetWriter_ajil</name>
+                    <persistsState>false</persistsState>
+                    <properties>
+                        <entry>
+                            <key>Schema Write Strategy</key>
+                            <value>schema-name</value>
+                        </entry>
+                        <entry>
+                            <key>schema-access-strategy</key>
+                            <value>inherit-record-schema</value>
+                        </entry>
+                        <entry>
+                            <key>schema-registry</key>
+                        </entry>
+                        <entry>
+                            <key>schema-name</key>
+                            <value>${schema.name}</value>
+                        </entry>
+                        <entry>
+                            <key>schema-version</key>
+                        </entry>
+                        <entry>
+                            <key>schema-branch</key>
+                        </entry>
+                        <entry>
+                            <key>schema-text</key>
+                            <value>${avro.schema}</value>
+                        </entry>
+                        <entry>
+                            <key>Date Format</key>
+                        </entry>
+                        <entry>
+                            <key>Time Format</key>
+                        </entry>
+                        <entry>
+                            <key>Timestamp Format</key>
+                        </entry>
+                        <entry>
+                            <key>CSV Format</key>
+                            <value>custom</value>
+                        </entry>
+                        <entry>
+                            <key>Value Separator</key>
+                            <value>,</value>
+                        </entry>
+                        <entry>
+                            <key>Include Header Line</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>Quote Character</key>
+                            <value>"</value>
+                        </entry>
+                        <entry>
+                            <key>Escape Character</key>
+                            <value>\</value>
+                        </entry>
+                        <entry>
+                            <key>Comment Marker</key>
+                        </entry>
+                        <entry>
+                            <key>Null String</key>
+                        </entry>
+                        <entry>
+                            <key>Trim Fields</key>
+                            <value>true</value>
+                        </entry>
+                        <entry>
+                            <key>Quote Mode</key>
+                            <value>MINIMAL</value>
+                        </entry>
+                        <entry>
+                            <key>Record Separator</key>
+                            <value>\n</value>
+                        </entry>
+                        <entry>
+                            <key>Include Trailing Delimiter</key>
+                            <value>false</value>
+                        </entry>
+                        <entry>
+                            <key>csvutils-character-set</key>
+                            <value>UTF-8</value>
+                        </entry>
+                    </properties>
+                    <state>ENABLED</state>
+                    <type>org.apache.nifi.csv.CSVRecordSetWriter</type>
+                </controllerServices>
+                <processGroups>
+                    <id>a906292d-0718-3cbb-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-765.215283624578</x>
+                        <y>445.4395189732129</y>
+                    </position>
+                    <comments></comments>
+                    <contents>
+                        <connections>
+                            <id>10279913-29ed-34b0-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>1716ed35-8f7e-36e4-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <name></name>
+                            <selectedRelationships>tweet</selectedRelationships>
+                            <source>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>9d52c4f3-b670-3b6f-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>39494987-4c30-30fc-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>c0613dad-f106-3ea4-0000-000000000000</id>
+<type>OUTPUT_PORT</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <name></name>
+                            <selectedRelationships>matched</selectedRelationships>
+                            <source>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>1716ed35-8f7e-36e4-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>7ab02ca6-7bc8-3826-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>9d52c4f3-b670-3b6f-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <name></name>
+                            <selectedRelationships>matched</selectedRelationships>
+                            <source>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>d09308e7-0844-35d8-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <connections>
+                            <id>91005538-f3bc-3143-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                            <destination>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>d09308e7-0844-35d8-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </destination>
+                            <flowFileExpiration>0 sec</flowFileExpiration>
+                            <labelIndex>1</labelIndex>
+                            <name></name>
+                            <selectedRelationships>success</selectedRelationships>
+                            <source>
+<groupId>a906292d-0718-3cbb-0000-000000000000</groupId>
+<id>c50fdfa2-21e7-3e81-0000-000000000000</id>
+<type>PROCESSOR</type>
+                            </source>
+                            <zIndex>0</zIndex>
+                        </connections>
+                        <outputPorts>
+                            <id>c0613dad-f106-3ea4-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <position>
+<x>1461.4815611709046</x>
+<y>209.63385820048654</y>
+                            </position>
+                            <comments></comments>
+                            <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                            <name>out tweet</name>
+                            <state>STOPPED</state>
+                            <type>OUTPUT_PORT</type>
+                        </outputPorts>
+                        <processors>
+                            <id>1716ed35-8f7e-36e4-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <position>
+<x>1431.4770677684855</x>
+<y>447.4335284304873</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.7.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Destination</key>
+        <value>
+            <name>Destination</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Return Type</key>
+        <value>
+            <name>Return Type</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Path Not Found Behavior</key>
+        <value>
+            <name>Path Not Found Behavior</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Null Value Representation</key>
+        <value>
+            <name>Null Value Representation</name>
+        </value>
+    </entry>
+    <entry>
+        <key>tweet2</key>
+        <value>
+            <name>tweet2</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Destination</key>
+        <value>flowfile-attribute</value>
+    </entry>
+    <entry>
+        <key>Return Type</key>
+        <value>json</value>
+    </entry>
+    <entry>
+        <key>Path Not Found Behavior</key>
+        <value>ignore</value>
+    </entry>
+    <entry>
+        <key>Null Value Representation</key>
+        <value>empty string</value>
+    </entry>
+    <entry>
+        <key>tweet2</key>
+        <value>$.text</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>EvaluateJsonPath</name>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>matched</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>unmatched</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+                        </processors>
+                        <processors>
+                            <id>9d52c4f3-b670-3b6f-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <position>
+<x>869.9501286093139</x>
+<y>567.309555797958</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.7.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Routing Strategy</key>
+        <value>
+            <name>Routing Strategy</name>
+        </value>
+    </entry>
+    <entry>
+        <key>tweet</key>
+        <value>
+            <name>tweet</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Routing Strategy</key>
+        <value>Route to Property name</value>
+    </entry>
+    <entry>
+        <key>tweet</key>
+        <value>${twitter.lang:equals("en")}</value>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>RouteOnAttribute</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>tweet</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>unmatched</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
+                        </processors>
+                        <processors>
+                            <id>c50fdfa2-21e7-3e81-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <position>
+<x>860.4612245245405</x>
+<y>28.820427520174064</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-social-media-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.7.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>WARN</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Twitter Endpoint</key>
+        <value>
+            <name>Twitter Endpoint</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Consumer Key</key>
+        <value>
+            <name>Consumer Key</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Consumer Secret</key>
+        <value>
+            <name>Consumer Secret</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Access Token</key>
+        <value>
+            <name>Access Token</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Access Token Secret</key>
+        <value>
+            <name>Access Token Secret</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Languages</key>
+        <value>
+            <name>Languages</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Terms to Filter On</key>
+        <value>
+            <name>Terms to Filter On</name>
+        </value>
+    </entry>
+    <entry>
+        <key>IDs to Follow</key>
+        <value>
+            <name>IDs to Follow</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Locations to Filter On</key>
+        <value>
+            <name>Locations to Filter On</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Twitter Endpoint</key>
+        <value>Sample Endpoint</value>
+    </entry>
+    <entry>
+        <key>Consumer Key</key>
+        <value>yTmgtMeR0YIRVDjFOcQ9GbqYR</value>
+    </entry>
+    <entry>
+        <key>Consumer Secret</key>
+    </entry>
+    <entry>
+        <key>Access Token</key>
+        <value>49546636-vSJcpCU1Nx9FAMp7mQYNECeYeYklRD6Fyo6Oet4oy</value>
+    </entry>
+    <entry>
+        <key>Access Token Secret</key>
+    </entry>
+    <entry>
+        <key>Languages</key>
+    </entry>
+    <entry>
+        <key>Terms to Filter On</key>
+    </entry>
+    <entry>
+        <key>IDs to Follow</key>
+        <value>558797310</value>
+    </entry>
+    <entry>
+        <key>Locations to Filter On</key>
+    </entry>
+</properties>
+<runDurationMillis>0</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>GetTwitter</name>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>success</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.twitter.GetTwitter</type>
+                        </processors>
+                        <processors>
+                            <id>d09308e7-0844-35d8-0000-000000000000</id>
+                            <parentGroupId>a906292d-0718-3cbb-0000-000000000000</parentGroupId>
+                            <position>
+<x>866.0354900549398</x>
+<y>303.89526020927406</y>
+                            </position>
+                            <bundle>
+<artifact>nifi-standard-nar</artifact>
+<group>org.apache.nifi</group>
+<version>1.7.0</version>
+                            </bundle>
+                            <config>
+<bulletinLevel>ERROR</bulletinLevel>
+<comments></comments>
+<concurrentlySchedulableTaskCount>4</concurrentlySchedulableTaskCount>
+<descriptors>
+    <entry>
+        <key>Destination</key>
+        <value>
+            <name>Destination</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Return Type</key>
+        <value>
+            <name>Return Type</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Path Not Found Behavior</key>
+        <value>
+            <name>Path Not Found Behavior</name>
+        </value>
+    </entry>
+    <entry>
+        <key>Null Value Representation</key>
+        <value>
+            <name>Null Value Representation</name>
+        </value>
+    </entry>
+    <entry>
+        <key>twitter.lang</key>
+        <value>
+            <name>twitter.lang</name>
+        </value>
+    </entry>
+    <entry>
+        <key>twitter.msg</key>
+        <value>
+            <name>twitter.msg</name>
+        </value>
+    </entry>
+</descriptors>
+<executionNode>ALL</executionNode>
+<lossTolerant>false</lossTolerant>
+<penaltyDuration>30 sec</penaltyDuration>
+<properties>
+    <entry>
+        <key>Destination</key>
+        <value>flowfile-attribute</value>
+    </entry>
+    <entry>
+        <key>Return Type</key>
+        <value>auto-detect</value>
+    </entry>
+    <entry>
+        <key>Path Not Found Behavior</key>
+        <value>ignore</value>
+    </entry>
+    <entry>
+        <key>Null Value Representation</key>
+        <value>empty string</value>
+    </entry>
+    <entry>
+        <key>twitter.lang</key>
+        <value>$.lang</value>
+    </entry>
+    <entry>
+        <key>twitter.msg</key>
+        <value>$.text</value>
+    </entry>
+</properties>
+<runDurationMillis>25</runDurationMillis>
+<schedulingPeriod>0 sec</schedulingPeriod>
+<schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+<yieldDuration>1 sec</yieldDuration>
+                            </config>
+                            <executionNodeRestricted>false</executionNodeRestricted>
+                            <name>Pull Key Attributes</name>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>failure</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>false</autoTerminate>
+<name>matched</name>
+                            </relationships>
+                            <relationships>
+<autoTerminate>true</autoTerminate>
+<name>unmatched</name>
+                            </relationships>
+                            <state>STOPPED</state>
+                            <style/>
+                            <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+                        </processors>
+                    </contents>
+                    <name>Get Tweet Json</name>
+                    <variables/>
+                </processGroups>
+                <processors>
+                    <id>0e0ae1fe-f620-3fc7-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-618.6628943751335</x>
+                        <y>1128.6224810306858</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>attribute-list</key>
+<value>
+    <name>attribute-list</name>
+</value>
+                            </entry>
+                            <entry>
+<key>attributes-regex</key>
+<value>
+    <name>attributes-regex</name>
+</value>
+                            </entry>
+                            <entry>
+<key>destination</key>
+<value>
+    <name>destination</name>
+</value>
+                            </entry>
+                            <entry>
+<key>include-core-attributes</key>
+<value>
+    <name>include-core-attributes</name>
+</value>
+                            </entry>
+                            <entry>
+<key>null-value</key>
+<value>
+    <name>null-value</name>
+</value>
+                            </entry>
+                            <entry>
+<key>include-schema</key>
+<value>
+    <name>include-schema</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>attribute-list</key>
+                            </entry>
+                            <entry>
+<key>attributes-regex</key>
+                            </entry>
+                            <entry>
+<key>destination</key>
+<value>flowfile-attribute</value>
+                            </entry>
+                            <entry>
+<key>include-core-attributes</key>
+<value>true</value>
+                            </entry>
+                            <entry>
+<key>null-value</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>include-schema</key>
+<value>false</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>AttributesToCSV</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.AttributesToCSV</type>
+                </processors>
+                <processors>
+                    <id>4c115b0c-4806-3205-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>452.2849975006411</x>
+                        <y>452.1338807984689</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Destination</key>
+<value>
+    <name>Destination</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Return Type</key>
+<value>
+    <name>Return Type</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Path Not Found Behavior</key>
+<value>
+    <name>Path Not Found Behavior</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Null Value Representation</key>
+<value>
+    <name>Null Value Representation</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Destination</key>
+<value>flowfile-attribute</value>
+                            </entry>
+                            <entry>
+<key>Return Type</key>
+<value>json</value>
+                            </entry>
+                            <entry>
+<key>Path Not Found Behavior</key>
+<value>ignore</value>
+                            </entry>
+                            <entry>
+<key>Null Value Representation</key>
+<value>empty string</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>EvaluateJsonPath</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>matched</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>unmatched</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+                </processors>
+                <processors>
+                    <id>7e45a236-4789-3eb9-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-279.7583559911982</x>
+                        <y>818.9846631300888</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Command Arguments</key>
+<value>
+    <name>Command Arguments</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Command Path</key>
+<value>
+    <name>Command Path</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Ignore STDIN</key>
+<value>
+    <name>Ignore STDIN</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Working Directory</key>
+<value>
+    <name>Working Directory</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Argument Delimiter</key>
+<value>
+    <name>Argument Delimiter</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Output Destination Attribute</key>
+<value>
+    <name>Output Destination Attribute</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Max Attribute Length</key>
+<value>
+    <name>Max Attribute Length</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Command Arguments</key>
+<value>${tweet2}</value>
+                            </entry>
+                            <entry>
+<key>Command Path</key>
+<value>/home/ajilnath/try/twitter/runthis.sh</value>
+                            </entry>
+                            <entry>
+<key>Ignore STDIN</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>Working Directory</key>
+<value>/usr/lib/python2.6/site-packages/</value>
+                            </entry>
+                            <entry>
+<key>Argument Delimiter</key>
+<value>;</value>
+                            </entry>
+                            <entry>
+<key>Output Destination Attribute</key>
+<value>sentiment</value>
+                            </entry>
+                            <entry>
+<key>Max Attribute Length</key>
+<value>256</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>5 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ExecuteStreamCommand</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>original</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.ExecuteStreamCommand</type>
+                </processors>
+                <processors>
+                    <id>86ac5d6d-3414-38a3-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>945.7857400018438</x>
+                        <y>497.1815015089951</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>record-reader</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
+    <name>record-reader</name>
+</value>
+                            </entry>
+                            <entry>
+<key>record-writer</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.serialization.RecordSetWriterFactory</identifiesControllerService>
+    <name>record-writer</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>record-reader</key>
+<value>403cc257-1b06-33ec-0000-000000000000</value>
+                            </entry>
+                            <entry>
+<key>record-writer</key>
+<value>eff7ffc5-e34a-3312-0000-000000000000</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ConvertRecord</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.ConvertRecord</type>
+                </processors>
+                <processors>
+                    <id>dabf496d-f45a-3d7f-0000-000000000000</id>
+                    <parentGroupId>5acb372e-257f-31f2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>-112.19136089300196</x>
+                        <y>439.71563001969776</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-hadoop-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Hadoop Configuration Resources</key>
+<value>
+    <name>Hadoop Configuration Resources</name>
+</value>
+                            </entry>
+                            <entry>
+<key>kerberos-credentials-service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+    <name>kerberos-credentials-service</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Principal</key>
+<value>
+    <name>Kerberos Principal</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Keytab</key>
+<value>
+    <name>Kerberos Keytab</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Relogin Period</key>
+<value>
+    <name>Kerberos Relogin Period</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Additional Classpath Resources</key>
+<value>
+    <name>Additional Classpath Resources</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Directory</key>
+<value>
+    <name>Directory</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Conflict Resolution Strategy</key>
+<value>
+    <name>Conflict Resolution Strategy</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Block Size</key>
+<value>
+    <name>Block Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>IO Buffer Size</key>
+<value>
+    <name>IO Buffer Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Replication</key>
+<value>
+    <name>Replication</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Permissions umask</key>
+<value>
+    <name>Permissions umask</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Remote Owner</key>
+<value>
+    <name>Remote Owner</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Remote Group</key>
+<value>
+    <name>Remote Group</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Compression codec</key>
+<value>
+    <name>Compression codec</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Hadoop Configuration Resources</key>
+<value>/nifi-log/HDFS/core-site.xml,/nifi-log/HDFS/hdfs-site.xml</value>
+                            </entry>
+                            <entry>
+<key>kerberos-credentials-service</key>
+                            </entry>
+                            <entry>
+<key>Kerberos Principal</key>
+<value>hdfs-cluster1@KDCAUTH.COM</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Keytab</key>
+<value>/etc/security/keytabs/hdfs.headless.keytab</value>
+                            </entry>
+                            <entry>
+<key>Kerberos Relogin Period</key>
+<value>4 hours</value>
+                            </entry>
+                            <entry>
+<key>Additional Classpath Resources</key>
+                            </entry>
+                            <entry>
+<key>Directory</key>
+<value>/user/ajilnath/tweets</value>
+                            </entry>
+                            <entry>
+<key>Conflict Resolution Strategy</key>
+<value>replace</value>
+                            </entry>
+                            <entry>
+<key>Block Size</key>
+                            </entry>
+                            <entry>
+<key>IO Buffer Size</key>
+                            </entry>
+                            <entry>
+<key>Replication</key>
+                            </entry>
+                            <entry>
+<key>Permissions umask</key>
+                            </entry>
+                            <entry>
+<key>Remote Owner</key>
+                            </entry>
+                            <entry>
+<key>Remote Group</key>
+                            </entry>
+                            <entry>
+<key>Compression codec</key>
+<value>NONE</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>PutHDFS</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.hadoop.PutHDFS</type>
+                </processors>
+            </contents>
+            <name>Twitter sentimental analysis</name>
+            <variables/>
+        </processGroups>
+    </snippet>
+    <timestamp>10/17/2018 17:07:32 IST</timestamp>
+</template>
